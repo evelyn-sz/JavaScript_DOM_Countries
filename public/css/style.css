@@ -1,0 +1,22 @@
+ul {
+    list-style: none;
+}
+
+.flag {
+    width: 40px;
+    border: 2px solid black;
+} 
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#populations {
+    width: 400px;
+}
+
+#favourite-countries{
+    
+}

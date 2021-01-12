@@ -9,6 +9,27 @@
 
 </head>
 <body>
-    
+    <div id="app">
+        <h1> Countries</h1>
+        <h2 v-if="allCountries">World Population: {{ totalPopulation }}</h2>
+
+        <div id="populations">
+            <h2>Population</h2>
+            <ul v-if="allCountries" v-for="(country, index) in allCountries">
+                <button v-on:click="addToFavourites(index)">Favoutite</button>
+                <button v-on:click="selectCountry(index)">Info</button>
+                <span>{{country.name}}: </span>
+                <span>{{country.population}}</span>
+                <p v-if="selectedCountry === country">Capital: {{country.capital}}</p>
+                <img v-if="selectedCountry === country" class="flag" :src="country.flag">
+            </ul>
+        </div>
+        <div id="favoutite-countries">
+            <h2>Favourite Countries </h2>
+            <ul v-for="country in favouriteCountries">
+                <p>{{country.name}}</p>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
